@@ -15,7 +15,7 @@
 
 ## # 프로젝트 구성
 - Java 11
-- Oracle(OracleCloud)
+- MySQL or MariaDB (RDS)
 - HTML, CSS, Thymeleaf
 - SpringBoot
 - github
