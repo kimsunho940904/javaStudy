@@ -126,6 +126,7 @@ $RECYCLE.BIN/
 
 *.properties
 *.yml
+<<<<<<< HEAD
 JasyptConfig.java
 JasyptConfigTest.java
 OracleConnectionTest.java
