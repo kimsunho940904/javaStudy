@@ -30,4 +30,4 @@
  👍 [박찬혁 깃허브](https://github.com/pchyeok)<br>
  
 ### # 참고 자료
-[AWS RDS 생성 방법]()
+[AWS RDS 생성 방법](https://github.com/kimsunho940904/javaStudy/wiki/%5BAWS%5D-RDS-%EC%83%9D%EC%84%B1-%EB%B0%A9%EB%B2%95)
