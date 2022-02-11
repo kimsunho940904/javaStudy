@@ -28,3 +28,6 @@
  👍 [김지원 깃허브](https://github.com/k1mjiwon)<br>
  👍 [김선호 깃허브](https://github.com/kimsunho940904)<br>
  👍 [박찬혁 깃허브](https://github.com/pchyeok)<br>
+ 
+### # 참고 자료
+[AWS RDS 생성 방법]()
