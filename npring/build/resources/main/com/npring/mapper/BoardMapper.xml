@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--인터페이스와 연결-->
+<mapper namespace="com.npring.mapper.BoardMapper">
+    <select id="list" resultType="com.npring.entity.Board">
+        SELECT *
+        FROM test_table;
+    </select>
+
+</mapper>
