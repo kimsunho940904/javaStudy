@@ -14,9 +14,10 @@ class JasyptConfigTest {
     @Test
     @DisplayName("DB 암호화 처리")
     void jasypt() {
-
-        String password = "jdbc:oracle:thin:@collaborate_high?TNS_ADMIN=/Users/kimsunho/javaStudy/Wallet_collaborate";
-                System.out.println("jasypt = " + jasyptEncoding(password));
+        String username = "admin";
+        String password = "admin123";
+        System.out.println("username = " + jasyptEncoding(username));
+        System.out.println("jasypt = " + jasyptEncoding(password));
     }
 
     public String jasyptEncoding(String value) {
