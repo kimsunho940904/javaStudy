@@ -14,7 +14,7 @@ public class BoardController {
     @Autowired
     BoardService boardService;
 
-    @GetMapping("/board/list")
+    @GetMapping("board/list")
     public String list(Model model) {
         model.addAttribute("list", boardService.list());
         return "/board/list";

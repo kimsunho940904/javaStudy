@@ -18,6 +18,14 @@
 </th:block>
 
 <div layout:fragment="content">
-    <h5>[[${list[0].bno}]]</h5>
+    <table>
+        <tbody>
+        <tr th:each="list : ${list}">
+            <td th:text="${list.bno}"></td>
+            <td th:text="${list.title}"></td>
+            <td th:text="${list.content}"></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </html>

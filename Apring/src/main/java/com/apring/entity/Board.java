@@ -8,6 +8,4 @@ public class Board {
     private Long bno;
     private String title;
     private String content;
-
-
 }
