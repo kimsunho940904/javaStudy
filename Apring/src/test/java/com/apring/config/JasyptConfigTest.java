@@ -12,8 +12,8 @@ class JasyptConfigTest {
     @Test
     @DisplayName("DB 암호화 처리")
     void jasypt() {
-        String username = "admin";
-        String password = "admin123";
+        String username = "";
+        String password = "";
         System.out.println("username = " + jasyptEncoding(username));
         System.out.println("jasypt = " + jasyptEncoding(password));
     }
