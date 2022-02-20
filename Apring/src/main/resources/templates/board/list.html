@@ -18,12 +18,24 @@
 </th:block>
 
 <div layout:fragment="content">
-    <table>
+    <h1>게시판</h1>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>글번호</th>
+            <th>제목</th>
+            <th>내용</th>
+            <th>작성일</th>
+            <th>수정일</th>
+        </tr>
+        </thead>
         <tbody>
-        <tr th:each="list : ${list}">
-            <td th:text="${list.bno}"></td>
-            <td th:text="${list.title}"></td>
-            <td th:text="${list.content}"></td>
+        <tr th:each="boardList : ${boardList}">
+            <td th:text="${boardList.bno}"></td>
+            <td th:text="${boardList.title}"></td>
+            <td th:text="${boardList.content}"></td>
+            <td th:text="${boardList.regTime}"></td>
+            <td th:text="${boardList.updateTime}"></td>
         </tr>
         </tbody>
     </table>

@@ -2,9 +2,45 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--인터페이스와 연결-->
 <mapper namespace="com.apring.mapper.BoardMapper">
-    <select id="list" resultType="com.apring.entity.Board">
-        SELECT *
-        FROM test_table;
+
+    <select id="boardCount" resultType="Long">
+        SELECT COUNT(*)
+        FROM board
     </select>
+
+    <select id="boardList" resultType="com.apring.entity.Board">
+        SELECT *
+        FROM board
+    </select>
+
+    <select id="boardDetail" parameterType="Long" resultType="com.apring.entity.Board">
+        SELECT *
+        FROM board
+        WHERE BNO = #{bno}
+    </select>
+
+    <insert id="boardInsert" parameterType="com.apring.entity.Board">
+        INSERT INTO board(title, content, regTime, updateTime)
+        values (#{title}, #{content}, now(), now())
+    </insert>
+
+    <update id="boardUpdate" parameterType="com.apring.entity.Board">
+        UPDATE board SET
+        <if test="title != null">
+            title = #{title},
+            updateTime = now()
+        </if>
+        <if test="content != null">
+            content = #{content},
+            updateTime = now()
+        </if>
+        WHERE bno = #{bno}
+    </update>
+
+    <delete id="boardDelete" parameterType="Long">
+        DELETE
+        FROM board
+        WHERE bno = #{bno}
+    </delete>
 
 </mapper>
