@@ -10,14 +10,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 @RequiredArgsConstructor
 public class BoardController {
-    
+
+    /**
+     * @작성자 : 김선호
+     * @작성일 : 2022.02.20
+     */
+
     @Autowired
     BoardService boardService;
 
-    @GetMapping("board/list")
-    public String list(Model model) {
-        model.addAttribute("list", boardService.list());
+    @GetMapping("/board/list")
+    public String boardList(Model model) throws Exception {
+        model.addAttribute("boardList", boardService.boardList());
         return "/board/list";
     }
+
 
 }
