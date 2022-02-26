@@ -9,7 +9,11 @@
 
 <!-- 사용자 css -->
 <th:block layout:fragment="css">
-
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
 </th:block>
 
 <!-- 사용자 script -->
@@ -24,7 +28,6 @@
         <tr>
             <th>글번호</th>
             <th>제목</th>
-            <th>내용</th>
             <th>작성일</th>
             <th>수정일</th>
         </tr>
@@ -33,9 +36,8 @@
         <tr th:each="boardList : ${boardList}">
             <td th:text="${boardList.bno}"></td>
             <td th:text="${boardList.title}"></td>
-            <td th:text="${boardList.content}"></td>
-            <td th:text="${boardList.regTime}"></td>
-            <td th:text="${boardList.updateTime}"></td>
+            <td th:text="${#temporals.format(boardList.regTime,'yyyy-MM-dd')}"></td>
+            <td th:text="${#temporals.format(boardList.updateTime,'yyyy-MM-dd')}"></td>
         </tr>
         </tbody>
     </table>
