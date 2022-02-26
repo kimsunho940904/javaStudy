@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+
+<!-- 사용자 css -->
+<th:block layout:fragment="css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+    </style>
+</th:block>
+
+<!-- 사용자 script -->
+<th:block layout:fragment="script">
+
+</th:block>
+
+<div layout:fragment="content">
+    <h1>고객 센터</h1>
+    <br><br>
+    <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">자주하는 질문</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">공지사항</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">1:1 문의</a>
+        </li>
+    </ul>
+</div>
+</html>
