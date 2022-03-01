@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--인터페이스와 연결-->
+<mapper namespace="com.apring.mapper.MemberMapper">
+<!-- 22.02.26 - 박찬혁
+회원가입 로직 -->
+  <!-- 회원등록 -->
+  <insert id="member_insert" >
+      INSERT 
+      INTO member_table 
+           (memberNo, memberId, memberPassword, memberName, memberBirth, memberGender, memberEmail, 
+           memberPhone, memberAddr1, memberAddr2, memberAddr3, memberAdmin, memberDate)
+      
+      VALUE((SELECT NLV(MAX(memberNo), 0) +1 FROM member_table),
+           ${memberId}, ${memberPassword}, ${memberName}, ${memberBirth}, ${memberGender}, ${memberEmail}, 
+           ${memberPhone}, ${memberAddr1}, ${memberAddr2}, ${memberAddr3}, 0, ${memberDate})
+  </insert>
+
+  <!-- 회원정보 전체검색 -->
+  <select id="member_selelct_all" resultType="com.apring.entity.Member">
+  SELECT * FROM member_table
+  ORDER BY memberNo desc;
+  </select>
+  
+  <!-- 회원정보 수정 -->
+  <update id="member_update">
+  UPDATE member_table
+  SET
+    memberPassword = #{memberPassword},
+    memberName = #{memberName},
+    memberBirth = #{memberBirth},
+    memberGender = #{memberGender},
+    memberEmail = #{memberEmail},
+    memberPhone = #{memberPhone},
+    memberAddr1 = #{memberAddr1},
+    memberAddr2 = #{memberAddr2},
+    memberAddr3 = #{memberAddr3}
+  WHERE memberId = #{memberId}
+  </update>
+  
+  <!-- 회원 탈퇴 -->
+  <delete id="member_delete">
+  DELETE
+  FROM member_table
+  WHERE memberNo = #{memberNo}
+  </delete>
+  
+  <!-- 회원가입 : 아이디 중복 check -->
+  <select id="member_check" resultType="long">
+  SELECT COUNT(*)
+  FROM member_table
+  WHERE memberId= #{memberId}
+  </select>
+  
+</mapper>
