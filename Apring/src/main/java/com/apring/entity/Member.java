@@ -12,7 +12,7 @@ public class Member {
 
     // 22.02.26 박찬혁
 	
-	private long memberNo;			// 회원 번호
+	private Long memberNo;			// 회원 번호
 	private String memberId;		// 회원 아이디
 	private String memberPassword;	// 비밀번호
 	private String memberName;		// 이름
@@ -23,7 +23,7 @@ public class Member {
 	private String memberAddr1;		// 우편번호
 	private String memberAddr2;		// 주소(앞)
 	private String memberAddr3;		// 주소(뒤)
-	private int memberAdmin;		// 운영 & 일반
+	private Long memberAdmin;		// 운영 & 일반
 	private Date memberDate;		// 가입 날짜
     
 }// end Member
