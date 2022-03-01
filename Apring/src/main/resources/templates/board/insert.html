@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+
+<!-- 사용자 css -->
+<th:block layout:fragment="css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</th:block>
+
+<!-- 사용자 script -->
+<th:block layout:fragment="script">
+
+</th:block>
+
+<div layout:fragment="content">
+    <div class="container">
+        <form th:action="@{/board/insert}" method="post">
+            <div class="form-group">
+                <label th:for="title">제목</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="제목">
+            </div>
+            <div class="form-group">
+                <label th:for="content">내용</label>
+                <textarea class="form-control" id="content" name="content" rows="3" placeholder="내용"></textarea>
+            </div>
+            <div class="form-group">
+                <label th:for="writer">작성자</label>
+                <input type="text" class="form-control" id="writer" name="writer" placeholder="작성자">
+            </div>
+            <div class="form-group" style="text-align: center">
+                <button type="submit" class="btn btn-secondary">작성</button>
+                <button type="button" class="btn btn-secondary" onclick="history.back()">뒤로가기</button>
+            </div>
+        </form>
+    </div>
+</div>
+</html>
