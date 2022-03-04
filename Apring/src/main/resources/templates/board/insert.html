@@ -37,8 +37,8 @@
                 <input type="text" class="form-control" id="writer" name="writer" placeholder="작성자">
             </div>
             <div class="form-group" style="text-align: center">
-                <button type="submit" class="btn btn-secondary">작성</button>
-                <button type="button" class="btn btn-secondary" onclick="history.back()">뒤로가기</button>
+                <button type="submit" class="btn btn-default">작성</button>
+                <button type="button" class="btn btn-default" th:onclick="|location.href='@{/board/list}'|">목록으로</button>
             </div>
         </form>
     </div>

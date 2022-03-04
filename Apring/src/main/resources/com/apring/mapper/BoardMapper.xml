@@ -20,8 +20,8 @@
     </select>
 
     <insert id="boardInsert" parameterType="com.apring.entity.Board">
-        INSERT INTO board(title, content, regTime, updateTime)
-        values (#{title}, #{content}, now(), now())
+        INSERT INTO board(title, content, writer, regTime, updateTime)
+        values (#{title}, #{content}, #{writer}, now(), now())
     </insert>
 
     <update id="boardUpdate" parameterType="com.apring.entity.Board">
