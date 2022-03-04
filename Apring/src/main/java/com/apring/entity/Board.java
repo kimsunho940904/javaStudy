@@ -20,6 +20,8 @@ public class Board {
     private String title;
     // 글 내용
     private String content;
+    //글 작성자
+    private String writer;
     // 작성 시간
     private LocalDateTime regTime;
     // 수정 시간
