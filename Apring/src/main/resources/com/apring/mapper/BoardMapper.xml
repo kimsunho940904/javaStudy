@@ -43,4 +43,6 @@
         WHERE bno = #{bno}
     </delete>
 
+
+
 </mapper>
