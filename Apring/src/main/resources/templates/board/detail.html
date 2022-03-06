@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+
+<!-- 사용자 css -->
+<th:block layout:fragment="css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</th:block>
+
+<!-- 사용자 script -->
+<th:block layout:fragment="script">
+
+</th:block>
+
+<div layout:fragment="content">
+    <div class="container">
+        <form th:action="@{/board/insert}" method="post">
+            <div class="form-group">
+                <input type="hidden" name="bno" id="bno" th:value="${read.bno}">
+                <label th:for="title">제목</label>
+                <input type="text" class="form-control" id="title" name="title" th:value="${read.title}" readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label th:for="content">내용</label>
+                <textarea class="form-control" id="content" name="content" rows="3"
+                          th:text="${read.content}" readonly="readonly"></textarea>
+            </div>
+            <div class="form-group">
+                <label th:for="writer">작성자</label>
+                <input type="text" class="form-control" id="writer" name="writer" th:value="${read.writer}" readonly="readonly">
+            </div>
+            <div class="form-group" style="text-align: center">
+                <button type="button" class="btn btn-default" th:onclick="|location.href='@{/board/list}'|">목록으로
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</html>
