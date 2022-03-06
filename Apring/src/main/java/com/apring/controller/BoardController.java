@@ -39,5 +39,11 @@ public class BoardController {
         return "redirect:/board/list";
     }
 
+    @GetMapping("/board/readView")
+    public String readView(Board board, Model model) throws Exception {
+        model.addAttribute("read", boardService.boardDetail(board.getBno()));
+        return "/board/detail";
+    }
+
 
 }
